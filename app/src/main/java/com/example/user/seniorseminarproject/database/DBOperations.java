@@ -50,8 +50,8 @@ public class DBOperations {
 
         // construct the SQL string
         String sqlQuery = "SELECT * FROM " + User.tablename +
-                " WHERE " + User.COLUMN_USERNAME + " = " +
-                username;
+                " WHERE " + User.COLUMN_USERNAME + " = '" +
+                username +"'";
 
 
         // Execute the query on the DB and store the returned rows
