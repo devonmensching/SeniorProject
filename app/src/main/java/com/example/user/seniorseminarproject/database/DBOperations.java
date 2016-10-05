@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 /**
  * Created by user on 9/15/2016.
  */
@@ -99,7 +101,27 @@ public class DBOperations {
         db.close();
     }
 
+    // Return the contents of the SQLite ZoneData Table
+    public ArrayList<Object> getZoneDataTableContents()
+    {
+        SQLiteDatabase db = dbHandler.getReadableDatabase();
+        String q = "Select * from ZoneData";
+        ArrayList<java.lang.Object> zoneDataList = new ArrayList<java.lang.Object>();
 
+        Cursor cursor = db.rawQuery(q, null);
+
+        if(cursor.moveToFirst())
+        {
+            do {
+                ZoneData zoneData = new ZoneData();
+                zoneData.setTime(cursor.getString(cursor.getColumnIndex(ZoneData.COLUMN_TIME)));
+                zoneData.setZone(cursor.getString(cursor.getColumnIndex(ZoneData.COLUMN_ZONE)));
+                zoneDataList.add(zoneData);
+            }while (cursor.moveToNext());
+        }
+        db.close();
+        return zoneDataList;
+    }
 
 }
 

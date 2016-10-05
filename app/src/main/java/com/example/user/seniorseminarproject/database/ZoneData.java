@@ -12,6 +12,8 @@ public class ZoneData {
     private String time;
     private String zone;
 
+    public ZoneData(){}
+
     public ZoneData(String time, String zone){
         this.time = time;
         this.zone = zone;
@@ -23,5 +25,5 @@ public class ZoneData {
 
     public String getZone(){ return zone; }
 
-    public void setZone(){ this.zone = zone; }
+    public void setZone(String zone){ this.zone = zone; }
 }
