@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".activities.ZoneInformationActivity"
+    android:background="#32449a">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout">
+
+        <ImageButton
+            android:layout_width="220dp"
+            android:layout_height="208dp"
+            android:id="@+id/blueZoneImageButton"
+            android:background="@drawable/bluezone"
+            android:onClick="onBlueZoneInfoClick"/>
+
+        <ImageButton
+            android:layout_width="214dp"
+            android:layout_height="211dp"
+            android:id="@+id/greenZoneImageButton"
+            android:background="@drawable/greenzone"
+            android:onClick="onGreenZoneInfoClick" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/yellowZoneImageButton"
+            android:background="@drawable/yellowzone"
+            android:onClick="onYellowZoneInfoClick" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="224dp"
+            android:id="@+id/redZoneImageButton"
+            android:background="@drawable/redzone"
+            android:onClick="onRedZoneInfoClick"
+            android:layout_weight="0.79" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&quot;The Zones of Reguation is a systematic, cognitive behavior approach used to teach self-regulation by categorizing all the differnt ways we feel and states of alertness we experience into four concrete zones. The Zones curriculum provides strategies to teach students to become more ware of, and independent in controlling their emotions and impulses, managing their sensory needs, and improving their ability to prblem solve conflicts&quot; -TheZonesOfReguatlion.com
+
+Click a Zone to learn more!"
+        android:id="@+id/ZoneInfo"
+        android:textSize="30dp"
+        android:textColor="#fcfcfc"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout"
+        android:background="#32459a" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/zoneInfoBackButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/ZoneInfo"
+        android:textColor="#fcfcfc"
+        android:textSize="20dp"
+        android:background="#35b729"
+        android:minWidth="275dp"
+        android:text="Back"
+        android:onClick="onZoneInfoBackButtonClick" />
+
+
+</RelativeLayout>

@@ -22,13 +22,22 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".alarm.AlarmReceiver"
+            android:process=":remote" />
+
+        <service
+            android:name=".alarm.AlarmService"
+            android:enabled="true"
+            android:process=":AlarmService" />
 
         <provider
             android:name=".net.StubProvider"
@@ -57,6 +66,14 @@
                 android:name="android.content.SyncAdapter"
                 android:resource="@xml/syncadapter" />
         </service>
+
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.ZoneSelectActivity" />
+        <activity android:name=".activities.ZoneInformationActivity" />
+        <activity android:name=".activities.BlueZoneActivity" />
+        <activity android:name=".activities.GreenZoneActivity" />
+        <activity android:name=".activities.YellowZoneActivity" />
+        <activity android:name=".activities.RedZoneActivity"></activity>
     </application>
 
 </manifest>
